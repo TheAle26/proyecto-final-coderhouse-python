@@ -1,10 +1,25 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from AppCoder.models import Restaurantes
 
 
-def resto(request):
-    rest1=Restaurantes(nombre="La Modelo",camada=4.5)
-    rest1.save()
-    return HttpResponse(f"Se ha creado el restaurante {rest1.nombre}")
 # Create your views here.
+def inicio(request):
+
+    return render(request,"AppCoder/inicio.html")
+
+def catalogo(request):
+
+   return render(request,"AppCoder/catalogo.html")
+
+def vendedores(request):
+
+    return render(request,"AppCoder/vendedores.html")
+    #al seleccionar el vendedor te va a abrir la pagina catalogo con el filtro del vendedor, si se puede
+
+def mi_usuario(request,name):
+
+    return render(request,"AppCoder/mi_usuario.html")
+    #la pagina del usuario, donde pueda acceder a sus compras y a sus caracteristicas de usuario
+
+
+
